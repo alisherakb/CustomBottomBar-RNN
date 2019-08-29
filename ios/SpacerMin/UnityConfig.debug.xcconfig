@@ -1,0 +1,63 @@
+//
+//  UnityConfig.xcconfig
+//  rnunitydemo
+//
+//  Created by xzper on 2018/3/6.
+//  Copyright © 2018年 Facebook. All rights reserved.
+//
+#include "Pods/Target Support Files/Pods-SpacerMin/Pods-SpacerMin.debug.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+
+
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
+
+PODS_HEADER_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/DoubleConversion" "${PODS_ROOT}/Headers/Public/RNGestureHandler" "${PODS_ROOT}/Headers/Public/RNReactNativeHapticFeedback" "${PODS_ROOT}/Headers/Public/RNReanimated" "${PODS_ROOT}/Headers/Public/RNVectorIcons" "${PODS_ROOT}/Headers/Public/React-Core" "${PODS_ROOT}/Headers/Public/React-DevSupport" "${PODS_ROOT}/Headers/Public/React-RCTActionSheet" "${PODS_ROOT}/Headers/Public/React-RCTAnimation" "${PODS_ROOT}/Headers/Public/React-RCTBlob" "${PODS_ROOT}/Headers/Public/React-RCTImage" "${PODS_ROOT}/Headers/Public/React-RCTLinking" "${PODS_ROOT}/Headers/Public/React-RCTNetwork" "${PODS_ROOT}/Headers/Public/React-RCTSettings" "${PODS_ROOT}/Headers/Public/React-RCTText" "${PODS_ROOT}/Headers/Public/React-RCTVibration" "${PODS_ROOT}/Headers/Public/React-RCTWebSocket" "${PODS_ROOT}/Headers/Public/React-cxxreact" "${PODS_ROOT}/Headers/Public/React-jsi" "${PODS_ROOT}/Headers/Public/React-jsiexecutor" "${PODS_ROOT}/Headers/Public/React-jsinspector" "${PODS_ROOT}/Headers/Public/glog" "${PODS_ROOT}/Headers/Public/react-native-maps" "${PODS_ROOT}/Headers/Public/yoga"
+
+PODS_LIBRARY_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion" "${PODS_CONFIGURATION_BUILD_DIR}/Folly" "${PODS_CONFIGURATION_BUILD_DIR}/RNGestureHandler" "${PODS_CONFIGURATION_BUILD_DIR}/RNReactNativeHapticFeedback" "${PODS_CONFIGURATION_BUILD_DIR}/RNReanimated" "${PODS_CONFIGURATION_BUILD_DIR}/RNVectorIcons" "${PODS_CONFIGURATION_BUILD_DIR}/React-Core" "${PODS_CONFIGURATION_BUILD_DIR}/React-DevSupport" "${PODS_CONFIGURATION_BUILD_DIR}/React-RCTActionSheet" "${PODS_CONFIGURATION_BUILD_DIR}/React-RCTAnimation" "${PODS_CONFIGURATION_BUILD_DIR}/React-RCTBlob" "${PODS_CONFIGURATION_BUILD_DIR}/React-RCTImage" "${PODS_CONFIGURATION_BUILD_DIR}/React-RCTLinking" "${PODS_CONFIGURATION_BUILD_DIR}/React-RCTNetwork" "${PODS_CONFIGURATION_BUILD_DIR}/React-RCTSettings" "${PODS_CONFIGURATION_BUILD_DIR}/React-RCTText" "${PODS_CONFIGURATION_BUILD_DIR}/React-RCTVibration" "${PODS_CONFIGURATION_BUILD_DIR}/React-RCTWebSocket" "${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact" "${PODS_CONFIGURATION_BUILD_DIR}/React-jsi" "${PODS_CONFIGURATION_BUILD_DIR}/React-jsiexecutor" "${PODS_CONFIGURATION_BUILD_DIR}/React-jsinspector" "${PODS_CONFIGURATION_BUILD_DIR}/glog" "${PODS_CONFIGURATION_BUILD_DIR}/react-native-maps" "${PODS_CONFIGURATION_BUILD_DIR}/yoga"
+
+PODS_LIBRARIES = $(inherited) -ObjC -l"DoubleConversion" -l"Folly" -l"RNGestureHandler" -l"RNReactNativeHapticFeedback" -l"RNReanimated" -l"RNVectorIcons" -l"React-Core" -l"React-DevSupport" -l"React-RCTActionSheet" -l"React-RCTAnimation" -l"React-RCTBlob" -l"React-RCTImage" -l"React-RCTLinking" -l"React-RCTNetwork" -l"React-RCTSettings" -l"React-RCTText" -l"React-RCTVibration" -l"React-RCTWebSocket" -l"React-cxxreact" -l"React-jsi" -l"React-jsiexecutor" -l"React-jsinspector" -l"glog" -l"react-native-maps" -l"stdc++" -l"yoga" -framework "JavaScriptCore"
+
+UNITY_SCRIPTING_BACKEND = il2cpp;
+GCC_PREFIX_HEADER = $(SRCROOT)/UnityExport/Classes/Prefix.pch;
+
+HEADER_SEARCH_PATHS = $(inherited) "$(SRCROOT)/UnityExport/Classes" "$(SRCROOT)/UnityExport/Classes/Unity" "$(SRCROOT)/UnityExport/Classes/Native" "$(SRCROOT)/UnityExport/Libraries" "$(SRCROOT)/UnityExport/Libraries/libil2cpp/include" ${PODS_HEADER_PATHS};
+
+LIBRARY_SEARCH_PATHS = $(inherited) "$(SRCROOT)/UnityExport/Libraries" "$(SRCROOT)/UnityExport/Libraries/libil2cpp/include" ${PODS_LIBRARY_PATHS};
+
+// If using .net 4.0 in Unity, append -DNET_4_0 to OTHER_CFLAGS
+OTHER_CFLAGS = $(inherited) -DINIT_SCRIPTING_BACKEND=1 -fno-strict-overflow -DRUNTIME_IL2CPP=1 -DNET_4_0;
+
+OTHER_LDFLAGS = $(inherited) -weak-lSystem -weak_framework CoreMotion -weak_framework GameKit -weak_framework iAd -framework AVFoundation -framework AudioToolbox -framework CFNetwork -framework CoreGraphics -framework CoreLocation -framework CoreMedia -framework CoreVideo -framework Foundation -framework MediaPlayer -framework MediaToolbox -framework Metal -framework OpenAL -framework OpenGLES -framework QuartzCore -framework SystemConfiguration -framework UIKit -liconv.2 -liPhone-lib -lil2cpp ${PODS_LIBRARIES};
+
+CLANG_CXX_LANGUAGE_STANDARD = c++0x;
+CLANG_CXX_LIBRARY = libc++;
+CLANG_ENABLE_MODULES = NO;
+CLANG_WARN_BOOL_CONVERSION = NO;
+CLANG_WARN_CONSTANT_CONVERSION = NO;
+CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+CLANG_WARN_EMPTY_BODY = NO;
+CLANG_WARN_ENUM_CONVERSION = NO;
+CLANG_WARN_INT_CONVERSION = NO;
+CLANG_WARN_OBJC_ROOT_CLASS = YES;
+CLANG_WARN_UNREACHABLE_CODE = NO;
+CLANG_WARN__DUPLICATE_METHOD_MATCH = NO;
+GCC_C_LANGUAGE_STANDARD = c99;
+GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+GCC_ENABLE_CPP_RTTI = NO;
+GCC_PRECOMPILE_PREFIX_HEADER = YES;
+GCC_THUMB_SUPPORT = NO;
+GCC_USE_INDIRECT_FUNCTION_CALLS = NO;
+GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64] = YES;
+GCC_WARN_ABOUT_RETURN_TYPE = YES;
+GCC_WARN_UNDECLARED_SELECTOR = NO;
+GCC_WARN_UNINITIALIZED_AUTOS = NO;
+GCC_WARN_UNUSED_FUNCTION = NO;
+
+ENABLE_BITCODE = NO;
+
+DEAD_CODE_STRIPPING = YES;
+
