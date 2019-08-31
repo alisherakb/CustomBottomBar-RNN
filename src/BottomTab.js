@@ -9,8 +9,10 @@ import {
   Animated,
   View,
   Easing,
+  findNodeHandle,
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
+import {NativeModules} from 'react-native';
 import AR from './icons/AR';
 import Karta from './icons/Karta';
 import Portals from './icons/Portals';
@@ -30,6 +32,21 @@ export default class BottomBar extends React.Component {
       useNativeDriver: true,
     }).start();
   };
+
+  constructor(props) {
+    super(props);
+    this.viewRef = null;
+  }
+
+  componentDidMount() {
+    // iOS only
+    // This is crucial part to keep the BottomBar on top of all other views!
+    // viewRef is set in render() like this: `ref={el => { this.viewRef = el }}`
+    if (this.viewRef && Platform.OS == 'ios') {
+      const reactTag = findNodeHandle(this.viewRef);
+      NativeModules.BottomBarHelper.setReactTagToFind(reactTag);
+    }
+  }
 
   render() {
     const firstTabOpacity = {
@@ -75,7 +92,7 @@ export default class BottomBar extends React.Component {
       ],
     };
     return (
-      <View style={styles.tabBar}>
+      <View style={styles.tabBar} ref={el => { this.viewRef = el }}>
         <TouchableOpacity onPress={() => this.changeToTab(0)}>
           <Animated.View
             useNativeDriver={true}

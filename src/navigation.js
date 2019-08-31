@@ -1,4 +1,6 @@
 import {Navigation} from 'react-native-navigation';
+import {NativeModules} from 'react-native';
+import {Platform} from 'react-native';
 
 export const goHome = () =>
   Navigation.setRoot({
@@ -61,4 +63,11 @@ Navigation.showOverlay({
       },
     },
   },
+}).then(() => {
+  // iOS only
+  // This updates the UIWindowLevel of BottomBar window for iOS app.
+  // This is required to keep the BottomBar on top of all other views.
+  if (Platform.OS == 'ios') {
+    NativeModules.BottomBarHelper.setHighestWindowLevelForBottomBarWindow();
+  }
 });

@@ -94,6 +94,7 @@
 		37C64B1D9104B0D828A6C99D /* GenericMethods6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E134ADCBBF66AACA002909D /* GenericMethods6.cpp */; };
 		385E46E2AEBA3A7450B5B856 /* Bulk_mscorlib_12.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91DB46408E9220672FC137E7 /* Bulk_mscorlib_12.cpp */; };
 		3AFF4BE3B7D87269573503D5 /* Il2CppCompilerCalculateTypeValues_26Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 822F477184ABC9ED5A6EED2F /* Il2CppCompilerCalculateTypeValues_26Table.cpp */; };
+		3B6480D12319D86E00BA866B /* BottomBarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6480D02319D86E00BA866B /* BottomBarHelper.m */; };
 		3BA14865982327F76CA345AE /* Bulk_QRCode_1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E4C5CBF4CACFA8B5BF016 /* Bulk_QRCode_1.cpp */; };
 		3E3F4CFCBAC0D593BF34C346 /* iOSHapticInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2411381147F68CFC2ABD7 /* iOSHapticInterface.m */; };
 		3E4A477EB2EC49C85CE7F776 /* Il2CppTypeDefinitions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971B41E594F6ED92FD792067 /* Il2CppTypeDefinitions.cpp */; };
@@ -530,6 +531,8 @@
 		3AE34D6B9FB7AC463B4BFFBF /* Il2CppTypeVector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Il2CppTypeVector.h; path = UnityExport/Libraries/libil2cpp/include/metadata/Il2CppTypeVector.h; sourceTree = SOURCE_ROOT; };
 		3B3B49728A7B7CDC5AD48195 /* PlatformInvoke.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlatformInvoke.h; path = UnityExport/Libraries/libil2cpp/include/vm/PlatformInvoke.h; sourceTree = SOURCE_ROOT; };
 		3B3B4D39BC28E3CF25256511 /* LifeCycleListener.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = LifeCycleListener.mm; path = UnityExport/Classes/PluginBase/LifeCycleListener.mm; sourceTree = SOURCE_ROOT; };
+		3B6480D02319D86E00BA866B /* BottomBarHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BottomBarHelper.m; sourceTree = "<group>"; };
+		3B6480D22319D87B00BA866B /* BottomBarHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BottomBarHelper.h; sourceTree = "<group>"; };
 		3BA74091B75CC35B1FBCE039 /* Bulk_Unity.XR.FaceSubsystem_0.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bulk_Unity.XR.FaceSubsystem_0.cpp; path = UnityExport/Classes/Native/Bulk_Unity.XR.FaceSubsystem_0.cpp; sourceTree = SOURCE_ROOT; };
 		3C47443591BAF3B3EDBADE21 /* UnityAdsUnityWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = UnityAdsUnityWrapper.mm; path = UnityExport/Classes/UnityAds/UnityAdsUnityWrapper.mm; sourceTree = SOURCE_ROOT; };
 		3C944E88A9991895B9EC3DA2 /* OSGlobalEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OSGlobalEnums.h; path = "UnityExport/Libraries/libil2cpp/include/os/c-api/OSGlobalEnums.h"; sourceTree = SOURCE_ROOT; };
@@ -1519,6 +1522,7 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				3B6480CE2319D84500BA866B /* Helpers */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				1534933B230AC0B000699207 /* UnityConfig.debug.xcconfig */,
@@ -1870,6 +1874,16 @@
 				24FD492D8F73D8DB837D3D6C /* RtFieldInfo.h */,
 			);
 			path = System.Reflection;
+			sourceTree = "<group>";
+		};
+		3B6480CE2319D84500BA866B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3B6480D22319D87B00BA866B /* BottomBarHelper.h */,
+				3B6480D02319D86E00BA866B /* BottomBarHelper.m */,
+			);
+			name = Helpers;
+			path = SpacerMin/Helpers;
 			sourceTree = "<group>";
 		};
 		3DE849F4A2C850451F306EC3 /* System.Security.Cryptography */ = {
@@ -3180,6 +3194,7 @@
 				60FF42AA9A3995FAC2E18683 /* Bulk_Generics_30.cpp in Sources */,
 				CD584164A43C7CC6E28F7456 /* Bulk_Generics_31.cpp in Sources */,
 				A4764B629218AF45BC037A06 /* Bulk_Generics_32.cpp in Sources */,
+				3B6480D12319D86E00BA866B /* BottomBarHelper.m in Sources */,
 				DA764071B1B186B876A45A5C /* Bulk_Generics_4.cpp in Sources */,
 				5BE24663BD3BA666FFFE2499 /* Bulk_Generics_5.cpp in Sources */,
 				19674C2CB68BAB41019B7673 /* Bulk_Generics_6.cpp in Sources */,
